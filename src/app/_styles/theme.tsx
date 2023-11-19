@@ -2,14 +2,25 @@
 
 import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { useDarkMode } from '../_hooks/useDarkMode';
 
-const mainTheme = {
-  fonts: {
-    primary: 'Inter',
-  },
+const lightTheme = {
   colors: {
     primary: '#0F52BA',
-    gray1: '#7d8597',
+    text: '#FFFFFF',
+    background: '#F9F9F9',
+    feedback: {
+      negative: '#E60000',
+      warning: '#FFCD07',
+      sucess: '#168821',
+      information: '#155BCB',
+    },
+  },
+};
+
+const darkTheme = {
+  colors: {
+    primary: '#0F52BA',
     text: '#FFFFFF',
     background: '#F9F9F9',
     feedback: {
@@ -35,7 +46,6 @@ const GlobalStyles = createGlobalStyle`
     width: 100vw;
     height: 100%;
     box-sizing: border-box;
-    background-color: #f4f4f4;
   }
 
   button {
@@ -48,8 +58,9 @@ export default function ThemeClient({
 }: {
   children: React.ReactNode;
 }) {
+  const { darkMode } = useDarkMode();
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       {children}
     </ThemeProvider>
