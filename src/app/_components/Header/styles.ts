@@ -30,6 +30,7 @@ export const StyledHeader = styled.header`
 
   .buttons {
     display: flex;
+    justify-content: center;
     gap: 20px;
 
     svg,

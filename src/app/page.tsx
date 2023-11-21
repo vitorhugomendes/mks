@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, ProductsList, Footer } from './_components';
+import { Header, ProductsList, ShoppingCart, Footer } from './_components';
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <main>
         <ProductsList></ProductsList>
       </main>
+      <ShoppingCart />
       <Footer />
     </>
   );

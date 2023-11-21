@@ -6,10 +6,11 @@ import Image from 'next/image';
 import { StyledHeader } from './styles';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 import cartIcon from '@/app/_assets/cart-icon.svg';
-import { useDarkMode } from '@/app/_hooks';
+import { useDarkMode, useProducts } from '@/app/_hooks';
 
 export default function Header() {
   const { darkMode, setDarkMode } = useDarkMode();
+  const { cartProducts, toggleCart } = useProducts();
 
   return (
     <StyledHeader>
@@ -27,10 +28,10 @@ export default function Header() {
           {darkMode ? <MdLightMode /> : <MdDarkMode />}
         </div>
         <button title="Acessar carrinho" className="cart-button">
-          <div className="cart-icon">
+          <div className="cart-icon" onClick={() => toggleCart()}>
             <Image src={cartIcon} alt="Carrinho" />
           </div>
-          <span>1</span>
+          <span>{cartProducts.length}</span>
         </button>
       </div>
     </StyledHeader>

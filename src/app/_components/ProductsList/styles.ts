@@ -9,7 +9,7 @@ export const StyledProductsList = styled.ul`
   gap: 20px;
   flex-direction: column;
 
-  li {
+  .product-card {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -32,7 +32,7 @@ export const StyledProductsList = styled.ul`
 
     .product-info-container {
       display: flex;
-      align-items: center;
+
       justify-content: space-between;
       gap: 10px;
       margin: 0 15px;
@@ -45,6 +45,8 @@ export const StyledProductsList = styled.ul`
       }
 
       .price-container {
+        display: flex;
+        align-items: center;
         background-color: #373737;
         padding: 10px;
         border-radius: 5px;

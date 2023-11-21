@@ -44,12 +44,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
     height: 100%;
-    box-sizing: border-box;
-    /* display: table; */
   }
 
   main {
    background-color: ${({ theme }) => theme.colors.background};;
+   min-height: 100vh;
    position: relative;
   }
 

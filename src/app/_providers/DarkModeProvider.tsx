@@ -14,7 +14,6 @@ interface IDarkModeContextValues {
 export const DarkModeContext = createContext({} as IDarkModeContextValues);
 
 export const DarkModeProvider = ({ children }: IDarkModeProviderProps) => {
-  // const localDarkMode = localStorage.getItem('mks:dark-mode') || false;
   const [darkMode, setDarkMode] = useState(false);
 
   return (

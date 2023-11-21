@@ -7,16 +7,22 @@ import { LuShoppingBag } from 'react-icons/lu';
 import { useProducts } from '@/app/_hooks';
 
 export default function ProductsList() {
-  const { products } = useProducts();
+  const { products, addProductToCart } = useProducts();
 
   return (
     <StyledProductsList>
       {products?.map((product) => {
         const { id, photo, name, price, description } = product;
         return (
-          <li key={id}>
+          <li key={id} className="product-card">
             <div className="product-img-container">
-              <Image fill={true} src={photo} alt={name} title={name} />
+              <Image
+                sizes="100%"
+                fill={true}
+                src={photo}
+                alt={name}
+                title={name}
+              />
             </div>
             <div className="product-info-container">
               <h3>{name}</h3>
@@ -30,7 +36,10 @@ export default function ProductsList() {
               </div>
             </div>
             <p className="product-description">{description}</p>
-            <button className="product-button">
+            <button
+              className="product-button"
+              onClick={() => addProductToCart(product, 1)}
+            >
               <LuShoppingBag />
               <span>COMPRAR</span>
             </button>
