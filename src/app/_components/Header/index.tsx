@@ -2,10 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { StyledHeader } from './styles';
-import { useDarkMode } from '@/app/_hooks/useDarkMode';
-import { TiShoppingCart } from 'react-icons/ti';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import cartIcon from '@/app/_assets/cart-icon.svg';
+import { useDarkMode } from '@/app/_hooks';
 
 export default function Header() {
   const { darkMode, setDarkMode } = useDarkMode();
@@ -27,7 +28,7 @@ export default function Header() {
         </div>
         <button title="Acessar carrinho" className="cart-button">
           <div className="cart-icon">
-            <TiShoppingCart />
+            <Image src={cartIcon} alt="Carrinho" />
           </div>
           <span>1</span>
         </button>

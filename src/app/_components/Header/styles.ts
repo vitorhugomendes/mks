@@ -23,7 +23,7 @@ export const StyledHeader = styled.header`
 
     span {
       font-size: 20px;
-      font-weight: 100;
+      font-weight: 300;
       color: #ffffff;
     }
   }
@@ -32,7 +32,8 @@ export const StyledHeader = styled.header`
     display: flex;
     gap: 20px;
 
-    svg {
+    svg,
+    img {
       width: 100%;
       height: 100%;
     }
@@ -48,9 +49,9 @@ export const StyledHeader = styled.header`
     .cart-button {
       display: flex;
       justify-content: center;
-      gap: 5px;
+      gap: 15px;
       padding: 6px;
-      width: 60px;
+      width: 80px;
       border: 1px solid transparent;
       border-radius: 8px;
 
@@ -60,8 +61,8 @@ export const StyledHeader = styled.header`
       }
 
       span {
-        font-size: 0.9rem;
-        font-weight: 800;
+        font-size: 1.125rem;
+        font-weight: 700;
       }
     }
   }

@@ -1,16 +1,15 @@
 import React from 'react';
-import { StyledHomePage } from './pageStyles';
-import { Header } from './_components';
+
+import { Header, ProductsList, Footer } from './_components';
 
 export default function Home() {
   return (
     <>
-      <Header></Header>
+      <Header />
       <main>
-        <StyledHomePage>
-          <h2>teste2</h2>
-        </StyledHomePage>
+        <ProductsList></ProductsList>
       </main>
+      <Footer />
     </>
   );
 }

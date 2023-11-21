@@ -2,13 +2,12 @@
 
 import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { useDarkMode } from '../_hooks/useDarkMode';
+import { useDarkMode } from '../_hooks';
 
 const lightTheme = {
   colors: {
     primary: '#0F52BA',
-    text: '#FFFFFF',
-    background: '#F9F9F9',
+    background: '#ffffff',
     feedback: {
       negative: '#E60000',
       warning: '#FFCD07',
@@ -21,8 +20,7 @@ const lightTheme = {
 const darkTheme = {
   colors: {
     primary: '#0F52BA',
-    text: '#FFFFFF',
-    background: '#F9F9F9',
+    background: '#2C2C2C',
     feedback: {
       negative: '#E60000',
       warning: '#FFCD07',
@@ -43,9 +41,16 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body, html {
+    font-family: 'Montserrat', sans-serif;
     width: 100vw;
     height: 100%;
     box-sizing: border-box;
+    /* display: table; */
+  }
+
+  main {
+   background-color: ${({ theme }) => theme.colors.background};;
+   position: relative;
   }
 
   button {
