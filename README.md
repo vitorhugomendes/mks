@@ -13,3 +13,5 @@ Para instalar e rodar localmente:
 * npm install
 * npm run dev
 
+Deploy: https://mks-mvrl9pcoy-vitorhugomendes.vercel.app/
+
